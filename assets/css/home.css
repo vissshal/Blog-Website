@@ -1,6 +1,9 @@
 body a {
   text-decoration: none;
 }
+body {
+  background-color: #00e8201c;
+}
 
 body h2 {
   font-family: "Allerta", sans-serif;

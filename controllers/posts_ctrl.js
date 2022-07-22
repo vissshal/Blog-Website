@@ -1,6 +1,10 @@
 const User = require("../models/user");
 const Post = require("../models/blogs");
 
+module.exports.new = function (req, res) {
+  return res.render("new");
+};
+
 module.exports.create = function (req, res) {
   Post.create(
     {

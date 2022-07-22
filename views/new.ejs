@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Post</title>
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body>
+    <% if (locals.user){ %>
+
+    <div id="new-post">
+      <form action="/post/create" method="post">
+        <textarea
+          name="title"
+          cols="70"
+          rows="2"
+          placeholder="Title of your Blog"
+        ></textarea>
+        <textarea
+          name="content"
+          cols="100"
+          rows="10"
+          placeholder="Write Your Blog Here . . . . ."
+        ></textarea>
+        <br />
+        <button type="submit" id="post-btn">Post</button>
+      </form>
+    </div>
+    <% } %>
+  </body>
+</html>
