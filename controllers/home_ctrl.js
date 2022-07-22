@@ -19,7 +19,7 @@ module.exports.home = function (req, res) {
           return;
         }
         return res.render("home", {
-          title: "CODEIAL || Home ",
+          title: "Blog || Home ",
           post: post.reverse(),
           users: users,
         });

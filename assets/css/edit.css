@@ -1,0 +1,17 @@
+body {
+  text-align: center;
+  font-family: calibri;
+}
+#title {
+  width: 50%;
+  height: 3rem;
+}
+#content {
+  width: 50%;
+  height: 3rem;
+}
+
+button {
+  width: 25%;
+  cursor: pointer;
+}

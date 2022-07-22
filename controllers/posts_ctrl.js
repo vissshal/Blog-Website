@@ -27,3 +27,27 @@ module.exports.delete = function (req, res) {
     return res.redirect("/");
   });
 };
+
+module.exports.edit = function (req, res) {
+  Post.findById(req.params.id, function (err, post) {
+    if (err) {
+      console.log(err);
+    }
+
+    return res.render("edit", { post: post });
+  });
+};
+
+module.exports.update = function (req, res) {
+  Post.findById(req.params.id, function (err, post) {
+    if (err) {
+      console.log(err);
+    }
+
+    post.title = req.body.title;
+    post.content = req.body.content;
+    post.save();
+
+    return res.redirect("/");
+  });
+};

@@ -86,12 +86,18 @@ body #older-posts .user .user-name {
 body #older-posts .user .user-name b {
   font-size: 20px;
 }
+body #older-posts .user .post-title {
+  font-family: calibri;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 8px 30px 10px;
+}
 
-body #older-posts .user .user-post {
+body #older-posts .user .post-content {
   font-family: calibri;
   font-weight: 400;
   font-size: 16px;
-  margin: 8px 30px 10px;
+  margin: 8px 0px 10px;
 }
 
 body #older-posts .user .delete-btn {

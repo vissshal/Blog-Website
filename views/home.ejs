@@ -60,6 +60,13 @@
               </b>
               posted on <%= posts.createdAt.toDateString() %>
 
+              <!-- Edit post button -->
+
+              <% if (posts.user.email == locals.user.email){ %>
+
+              <a href="/post/edit/<%= posts._id %>"> Edit </a>
+              <% } %>
+
               <!-- Delete post button -->
 
               <% if (posts.user.email == locals.user.email){ %>
@@ -68,7 +75,9 @@
 
               <!--  -->
             </div>
-            <div class="user-post"><%= posts.content %></div>
+
+            <div class="post-title"><%= posts.title %></div>
+            <div class="post-content"><%= posts.content %></div>
           </div>
           <%} ) %>
         </div>
