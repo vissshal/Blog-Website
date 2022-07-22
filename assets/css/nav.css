@@ -1,0 +1,34 @@
+.nav-main {
+  display: flex;
+  position: relative;
+  align-items: center;
+  background-color: silver;
+  height: 50px;
+  width: 100%;
+}
+
+.nav-main a {
+  text-decoration: none;
+  color: initial;
+  font-family: calibri;
+}
+
+.nav-main #logo img {
+  height: 100%;
+  width: 62px;
+}
+
+.nav-main #logo-text {
+  margin-left: 12px;
+}
+
+.nav-main #logo-text a {
+  font-family: "Rubik Moonrocks", Calibri;
+  font-size: 30px;
+}
+
+.nav-main #showUser {
+  position: absolute;
+  right: 5;
+  padding-left: 4px;
+}

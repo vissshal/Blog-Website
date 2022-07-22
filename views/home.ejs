@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@800&family=Rubik+Moonrocks&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allerta&family=Sriracha&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/home.css" />
+
+    <body>
+      <h2>Welcome to the Home Page</h2>
+      <div>
+        <!-- Since, "locals.user" is created only when "req.isAuthenticated()" returns true thus, we can use 
+          "locals.user" in case we don't have access to "req.isAuthenticated()" or callback function with arguement as req -->
+        <% if (locals.user){ %>
+        <a href="/user/profile/<%= user._id %>">
+          <!--  -->
+          <button class="profile-signup">Profile</button>
+        </a>
+
+        <!--  Creating form for a New Post -->
+
+        <div id="new-post">
+          <form action="/post/create" method="post">
+            <textarea
+              name="title"
+              cols="70"
+              rows="2"
+              placeholder="Title of your Blog"
+            ></textarea>
+            <textarea
+              name="content"
+              cols="100"
+              rows="10"
+              placeholder="Write Your Blog Here . . . . ."
+            ></textarea>
+            <br />
+            <button type="submit" id="post-btn">Post</button>
+          </form>
+        </div>
+
+        <div id="older-posts">
+          <% post.map(function(posts){ %>
+          <div class="user">
+            <div class="user-name">
+              <b
+                ><!--  -->
+                <%= posts.user.name %>
+                <!--  -->
+              </b>
+              posted on <%= posts.createdAt.toDateString() %>
+
+              <!-- Delete post button -->
+
+              <% if (posts.user.email == locals.user.email){ %>
+              <a href="/post/delete/<%= posts._id %>"> Delete </a>
+              <% } %>
+
+              <!--  -->
+            </div>
+            <div class="user-post"><%= posts.content %></div>
+          </div>
+          <%} ) %>
+        </div>
+
+        <% } else { %>
+        <a href="/user/signin">
+          <button id="signin">Sign In</button>
+        </a>
+
+        <a href="/user/signup">
+          <button class="profile-signup">Sign Up</button>
+        </a>
+        <% } %>
+      </div>
+    </body>
+  </head>
+</html>
